@@ -12,7 +12,7 @@ var express = require('express')
 var app;
 
 /**
- * credoc.configure( options )
+ * cresys.configure( options )
  * 
  * ### optional configuration options:
  *
@@ -22,17 +22,19 @@ var app;
  */
 module.exports.configure = function( options ){
 
+  var parentPath = path.dirname(module.parent.filename);
+
   app = express();
 
   app.configure(function(){
-    app.set('port', process.env.PORT || 3000);
-    app.set('views', __dirname + '/views');
+    app.set('port', process.env.PORT || options.port || 4444 );
+    app.set('views', parentPath + '/app/views');
     app.set('view engine', 'ejs');
     app.use(express.favicon());
-    app.use(express.logger('dev'));
+    app.use(express.logger( options.logLevel || 'dev' ));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
-    app.use(express.cookieParser('your secret here'));
+    app.use(express.cookieParser('twk/cresys/cresys'));
     app.use(express.session());
     app.use(app.router);
     app.use(require('stylus').middleware(__dirname + '/public'));
@@ -43,16 +45,16 @@ module.exports.configure = function( options ){
     app.use(express.errorHandler());
   });
 
-  app.get('/', routes.index);
+  app.get('/routes', function( req, res ){ res.json( app.routes ) });
 }
 
 /**
- * credoc.start()
+ * cresys.start()
  * 
- * start the credoc application server instance
+ * start the cresys application server instance
  */
 module.exports.start = function(){
   http.createServer(app).listen(app.get('port'), function(){
-    console.log("Express server listening on port " + app.get('port'));
+    console.log("CRESYS/v listening on port " + app.get('port'));
   });
 }

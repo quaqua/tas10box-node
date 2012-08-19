@@ -1,10 +1,10 @@
 {
   "private": true,
-  "name": "crevis",
+  "name": "cresys",
   "version": "0.99.1",
   "preferGlobal": "true",
   "author": "thorsten zerha <thorsten.zerha@tastenwerk.com>",
-  "description": "CREVIS is a visual frontend to the CRESYS content repository and is based on expressjs",
+  "description": "CRESYS is a visual frontend to the CRESYS content repository and is based on expressjs",
   "main": "index",
   "dependencies": {
     "express": "3.0.x",
@@ -17,6 +17,6 @@
     "node": ">=0.8"
   },
   "bin": {
-    "crevis": "./bin/crevis"
+    "cresys": "./bin/cresys"
   }
 }
