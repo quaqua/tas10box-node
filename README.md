@@ -1,27 +1,27 @@
-About CREVIS
+About CRESYS
 ============
 
-CREVIS is a operational backend for the CRESYS document
-repository. CREVIS creates/updates/finds documents as a
+CRESYS is a content repository system with a nice graphical
+frontend. CRESYS creates/updates/finds documents as a
 web services. It's main communication runs through JSON
 and if required BSON.
 
-Also CREVIS provides a beautiful visual interface to the
+Also CRESYS provides a beautiful visual interface to the
 document repository.
 
-CREVIS is based on expressjs. The whole http routing will
+CRESYS is based on expressjs. The whole http routing will
 be done through it.
 
 Installation
 ============
 
-	npm install -g crevis
+	npm install -g cresys
 
-Using CREVIS
+Using CRESYS
 ============
 
-Start a new CREVIS project by calling on the command line
+Start a new CRESYS project by calling on the command line
 
-	crevis new myapp
+	cresys new myapp
 
-And CREVIS will create the required folder structure for you.
+And CRESYS will create the required folder structure for you.

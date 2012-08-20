@@ -8,6 +8,7 @@
   "main": "index",
   "dependencies": {
     "express": "3.0.x",
+    "i18next": "1.x",
     "ejs": "*",
     "stylus": "*",
     "commander": "1.x"
