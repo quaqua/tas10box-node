@@ -1,0 +1,34 @@
+!!! 5
+
+html
+	
+	include snippets/head
+	link(rel='stylesheet', href='/stylesheets/login.css')
+
+	body
+
+		-if( flash('error') )
+			div.login-error-container
+				span #{flash('error', 'sweep')}
+
+		div.login-logo
+
+		div.login-container
+
+			form(method='post', action='/login')
+				input(type='hidden', name='_csrf', value=_csrf)
+
+				p
+					label #{t('login.name_email')}
+				p
+					input.js-get-focus(type='text', name='user[name_or_email]')
+
+				p
+					label #{t('login.password')}
+				p
+					input(type='password', name='user[password]')
+
+					input(type='submit', value=t('login.login') )
+
+		div.login-footer-container
+			&copy; TASTENWERK (2o12)

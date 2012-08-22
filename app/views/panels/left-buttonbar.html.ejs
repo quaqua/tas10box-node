@@ -1,0 +1,48 @@
+<div id="tb-left-panel">
+	<div id="tb-buttonbar">
+		<span id="active-tab-arrow"></span>
+		<% for( var i in tastenbox.plugins ){ %>
+			<% plugin = tastenbox.plugins[i]; %>
+			<% if ( 'buttonbar' in plugin ){ %>
+				<% if ( 'separator' in plugin.buttonbar ){ %><span class="separator buttonbar-button"></span><% } %>
+				<% if ( 'iconPath' in plugin.buttonbar ){ %>
+					<img class="buttonbar-button" id="button_<%= plugin.name %>" src="<%= plugin.iconPath %>" />
+				<% } else if ( 'iconVariant' in plugin.buttonbar ){ %>
+					<span id="button_<%= plugin.name %>" class="buttonbar-button tb-icon24 black tb-icon-<%= plugin.buttonbar.iconVariant %> float-left live-tipsy-w" original-title="<%= t('plugin.'+plugin.name+'.title') %>"<%- 'doubleClick' in plugin.buttonbar ? " data-dblclk-url=\""+plugin.buttonbar.doubleClick.url+"\"" : "" %>></span>		
+				<% } %>
+			<% } %>
+		<% } %>
+		<span class="separator buttonbar-button"></span>
+		<% for( var i in tastenbox.plugins ){ %>
+			<% plugin = tastenbox.plugins[i]; %>
+			<% if( 'app' in plugin ){ %>
+				<a href="/<%= plugin.name %>s" data-remote="true"><span id="button_<%= plugin.name %>" class="buttonbar-button tb-icon24 black tb-icon-<%= plugin.name %> float-left live-tipsy-w" original-title="<%= t('plugin.'+plugin.name+'.title_pl') %>" <%- 'doubleClick' in plugin.app ? " data-dblclk-url=\""+plugin.app.doubleClick.url+"\"" : "" %>></span></a>
+			<% } %>
+		<% } %>
+		<span class="app-sep"></span>
+	</div>
+	<div class="tb-left-panel-inner-wrapper">
+		<div id="tb-button-tabs">
+			<% for( var i in tastenbox.plugins ){ %>
+				<% plugin = tastenbox.plugins[i]; %>
+				<% if('buttonbar' in plugin){ %>
+
+					<% if ( 'contentFile' in plugin.buttonbar) { %>
+						<div class="tab" id="tab_<%= plugin.name %>">
+							<%- partial(plugin.buttonbar.contentFile) %>
+						</div>
+					<% } %>
+
+					<% if( 'init' in plugin.buttonbar ){ %>
+						<script type="text/javascript">
+							<%- plugin.buttonbar.init %>;
+						</script>
+					<% } %>
+
+				<% } %>
+
+			<% } %>
+
+		</div>
+	</div>
+</div>

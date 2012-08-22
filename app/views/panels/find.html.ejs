@@ -1,0 +1,21 @@
+<div id="tb-find">
+	<form action="/documents/find" method="post" data-remote="true">
+		<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+		<input type="hidden" name="label_ids" value="" />
+		<input type="hidden" name="types" value="" />
+		<input type="hidden" name="conditions" value="" />
+		
+		<span class="conditions"></span>
+		<span class="path"></span>
+		<input type="text" name="query" />
+		<a href="#" class="submit"><span class="tb-icon24 black float-right tb-icon-find"></span></a>
+		<div class="settings">
+			<span class="ui-icon ui-icon-triangle-1-s"></span>
+			<div class="settings-content">
+				<h4><%= t('settings') %></h4>
+				<p><%= t('plugin.script.available') %></p>
+				<ul class="available-scripts query"></ul>
+			</div>
+		</div>
+	</form>
+</div>

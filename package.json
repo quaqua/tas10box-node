@@ -1,23 +1,27 @@
 {
   "private": true,
-  "name": "cresys",
+  "name": "tas10box",
   "version": "0.99.1",
   "preferGlobal": "true",
   "author": "thorsten zerha <thorsten.zerha@tastenwerk.com>",
-  "description": "CRESYS is a visual frontend to the CRESYS content repository and is based on expressjs",
+  "description": "tas10box a web application framework based on expressjs",
   "main": "index",
   "dependencies": {
     "express": "3.0.x",
     "i18next": "1.x",
+    "jade": "*",
+    "consolidate": "*",
     "ejs": "*",
     "stylus": "*",
-    "commander": "1.x"
+    "connect-assetmanager": "*",
+    "commander": "1.x",
+    "tas10core": "1.x"
   },
   "license": "PROPRIETARY",
   "engine": {
     "node": ">=0.8"
   },
   "bin": {
-    "cresys": "./bin/cresys"
+    "tas10box": "./bin/tas10box"
   }
 }

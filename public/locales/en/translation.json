@@ -1,0 +1,347 @@
+{
+	"or": "or",
+	"and": "and",
+	"cancel": "Cancel",
+	"back": "back",
+	"Failed": "Failed",
+	"cut": "Cut",
+	"copy": "Copy",
+	"paste": "Paste",
+	"share": "Share",
+	"welcome": "Welcome here",
+	"and_close_tab": "and close tab",
+	"filter": "Filter",
+	"name": "Name",
+	"preferences": "Preferences",
+	"color": "Color",
+	"public": "Public",
+	"published": "published",
+	"limited": "limited",
+	"has_been_published": "'__name__' has been published",
+	"has_been_limited": "'__name__' has been set to limited access",
+	"preview": "Preview",
+	"remove_color": "Remove color",
+	"star": "Star",
+	"search_results": "Search: '__query__'",
+	"search_results_plural": "Search: '__query__'",
+	"search_term": "Search term",
+	"found_plural": "Found __count__ results for '__query__'",
+	"found": "Found __count__ results for '__query__'",
+	"save_as_script": "Save as script",
+	"last_update": "Last update",
+	"home": "Home",
+	"show_history": "Show history",
+	"language": "Language",
+	"logout": "Logout",
+	"login": {
+		"login": "Login",
+		"name_email": "Account name or Email",
+		"password": "Password",
+		"signup": "Sign up",
+		"invalid": "Account name, email or password do not match",
+		"setup_desc": "Welcome! Please set up a password and you are ready to start"
+	},
+	"user": {
+		"name": "Name",
+		"email": "Email",
+		"fullname": "Full name",
+		"password": "Password",
+		"groups": "Groups",
+		"invited": "__name__ has been invited (email has been sent)",
+		"invited_no_email": "__name__ has been invited (no email sent)",
+		"pic_saved": "Picture saved",
+		"show_my_profile": "Show my profile",
+		"edit_my_profile": "Edit my profile",
+		"change_picture": "Change profile picture",
+		"general": "General",
+		"defaults": "Defaults",
+		"copyright": "Copyright",
+		"copyright_desc": "This setting will be used whenever a copyright field ist available (e.g.: picture upload)",
+		"default_set": "Default setting saved: __key__:__value__",
+		"default_removed": "Default setting removed: __key__:__value__"
+	},
+	"last_login": "Last login",
+	"never": "never",
+	"activity": "Activity",
+	"actions": {
+		"created": "created",
+		"modified": "modified"
+	},
+	"new": "New",
+	"create_script": "Create script",
+	"continue_editing": "continue editing",
+	"create": "Create",
+	"upload": "Upload",
+	"view": "View",
+	"edit": "Edit",
+	"save": "Save",
+	"saved": "Successfully saved __name__",
+	"saving_failed": "Failed to save __name__",
+	"save_settings": "Save settings",
+	"settings_saved": "Settings have been saved for __name__",
+	"password_changed": "Password has been changed successfully",
+	"renamed": "__from__ has been renamed to __to__",
+	"color_saved": "Color for __name__ has been saved",
+	"saving_failed": "Failed to save __name__",
+	"failed_sorting": "Failed to save new order",
+	"sorting_saved": "New order has been saved",
+	"enter_name": "Enter new name",
+	"rename": "Rename",
+	"delete": "Delete",
+	"add_here": "Add this item here",
+	"info": "Information",
+	"delete_this_item": "Delete this item",
+	"really_delete": "Really delete '__name__'",
+	"deleted": "Successfully deleted '__name__'",
+	"deletion_failed": "Failed to delete '__name__'",
+	"items": "__count__ items",
+	"type": "Type",
+	"common": "Common",
+	"details": "Details",
+	"location": "Location",
+	"location_desc": "Your new document will be created in path",
+	"created_at": "Created at",
+	"modified_at": "Modified at",
+	"what_desc": "What would you like to create?",
+	"created": "__name__ has been created successfully!",
+	"creation_failed": "Failed to create __name__",
+	"starred": "Document __name__ has been starred",
+	"unstarred": "Star removed from document __name__",
+	"move_to": "Move to",
+	"copy_to": "Copy to",
+	"tag_with": "Label with",
+	"labeled_with": "Labeled with",
+	"moved": "__name__ has been moved to __to__",
+	"moving_failed": "__name__ could not be moved to __to__",
+	"tagged": "__name__ has been tagged with __to__",
+	"view_type": "View",
+	"tree": "Tree",
+	"list": "List",
+	"bussiness_cards": "Bussiness cards",
+	"sort": "sort",
+	"sort_options": {
+		"name": "Name",
+		"date": "Date",
+		"fn": "Firstname",
+		"ln": "Lastname",
+		"email": "Email",
+		"phone": "Phone",
+		"star": "Star"
+	},
+	"page": "Page",
+	"items_per_page": "Items per page",
+	"tags": {
+		"title": "Labels",
+		"desc": "A label is used to categorize and organize any items (including tags themself)",
+		"add": "Add label...",
+		"remove": "Remove this label",
+		"already_tagged": "__name__ is already labeled with this tag",
+		"tagged_with": "__name__ has been labeled with __tag__",
+		"removed_tag": "Label __tag__ has been removed from __name__",
+		"cannot_tag_with_itself": "Document __name__ cannot be labeled with itself"
+	},
+
+	"acl": {
+		"title": "Access Control",
+		"desc": "Users and groups with access on this document",
+		"add": "Share...",
+		"remove": "Unshare",
+		"share": "Share",
+		"shared": "__name__ has been successfully shared with __user__ (__privileges__)",
+		"sharing_failed": "Failed to share __name__ with user __user__",
+		"unshared": "__user__ has no longer access on __name__",
+		"unsharing_failed": "Failed to remove access for __user__ on __name__"
+	},
+
+	"comments": {
+		"new": "New comment",
+		"post": "Post"
+	},
+
+	"not_found": "The requested resource was not found on this server",
+
+	"website": {
+		"title": "Website",
+		"desc": "A website represents an internet presence on top level. E.g.: 'derstandard.at', 'google.com', ...",
+		"templates": "Templates"
+	},
+
+	"errors": {
+		"not_an_email": "The email address you have entered is not valid (__email__)",
+		"cannot_move_or_copy_here": "Cannot move or copy item into desired destination",
+		"missing": "Missing values: __values__"
+	},
+
+	"applications": "Applications",
+	"plugin": {
+		"favourits": {
+			"title": "Favourits"
+		},
+		"label": {
+			"title": "Labels",
+			"new": "New label",
+			"query": "Query",
+			"template": "Template",
+			"template_desc": "A template is a specialized view to list this label's contents in a predefined manner.",
+			"no_template": "No template"
+		},
+		"file": {
+			"title": "Upload file(s)",
+			"new": "Upload file(s)"
+		},
+		"script": {
+			"title": "Script",
+			"new": "New Script",
+			"available": "Available Scripts",
+			"templates": "Templates",
+			"globals": "Global variables",
+			"columns": "Columns in resulting table",
+			"body": "Body",
+			"query": "Query",
+			"edit": "Edit Script '__name__'"
+		},
+		"webpage": {
+			"title": "Internet Object",
+			"new": "New Internet Object",
+			"title_pl": "Internet Objects",
+			"template": "Template",
+			"content": "Content",
+			"source": "Source",
+			"gallery": "Gallery",
+			"files": "Downloads",
+			"settings": "Settings",
+			"seo": "SEO",
+			"abstract": "Abstract",
+			"robots": "Recommend search engines to ignore this page",
+			"new_locale": "Enter abbreviation for new locale (e.g.: DE, ES, IT) like the country's domain name end",
+			"locale_added": "The locale __name__ has been added. Text from previously selected language can be overridden. Nothing saved yet.",
+			"locale_adding_failed": "The given locale __name__ is not valid. Please verify and try again.",
+			"slug": "Slug (abbreviation in addressbar)",
+			"delete_pics": "Delete selected pics",
+			"edit_pics": "Set left-hand form information for selected pics",
+			"really_delete_selected_pics": "Really delete selected pictures?",
+			"templates": {
+				"default": "Default Webpage",
+				"front": "Frontpage (Landing page)",
+				"blog_container": "Blog Container",
+				"blog_entry": "Blog Entry"
+			}
+		},
+		"contact": {
+			"title": "Contact",
+			"title_pl": "Addressbook",
+			"new": "New Contact",
+			"name": "Name",
+			"country": "Country",
+			"general": "General",
+			"settings": "Settings",
+			"salutation": "Salutation",
+			"acad_title": "Title",
+			"fn": "Firstname",
+			"ln": "Lastname",
+			"firstname": "Firstname",
+			"lastname": "Lastname",
+			"street": "Street",
+			"zip": "Zip",
+			"city": "City",
+			"email": "Email",
+			"phone": "Phone",
+			"company": "Company",
+			"billing": "Billing",
+			"template": "Template",
+			"birthdate": "Birthdate",
+			"age": "Age",
+			"templates": {
+				"default": "Default Contact",
+				"workshop": "Workshop participant"
+			},
+			"label_templates": {
+				"contact_list": "Contact List"
+			},
+			"userDefaults": {
+				"contacts_view": "Contact view",
+				"contacts_view_desc": "How your contacts are shown in a list when clicking on a 'contact-list'-label"
+			},
+			"associations": "Associations"
+		},
+		"appointment": {
+			"title": "Appointment",
+			"title_pl": "Calendar",
+			"new": "New Appointment",
+			"from": "From",
+			"to": "To",
+			"all_day": "All day",
+			"template": "Template",
+			"moved": "Appointment '__name__' has been moved from __from__ to __to__.",
+			"resized": "Appointment '__name__' has been resized. Lasts now from __from__ &ndash; __to__",
+			"edit": "Edit appointment '__name__'",
+			"templates": {
+				"default": "Default Appointment"
+			}
+		},
+		"calendar": {
+			"title": "Calendar",
+			"new": "New Calendar",
+			"my_calendars": "My Calendars"
+		},
+		"workshop": {
+			"title": "Workshop",
+			"title_pl": "Workshops",
+			"new": "New Workshop",
+			"max_participants": "Max. participants",
+			"min_participants": "Min. participants",
+			"leader": "Workshop leader",
+			"starts_at": "Starts at",
+			"ends_at": "Ends at",
+			"new_participant": "New participant",
+			"edit": "Edit workshop"
+		},
+		"dashboard": {
+			"title": "Dashboard",
+			"homedir": "__username__'s home",
+			"new": "New ...",
+			"find": "Find"
+		},
+		"find": {
+			"title": "Find documents"
+		},
+		"create": {
+			"title": "Add a new document"
+		},
+		"browser": {
+			"title": "My home dir"
+		},
+		"friends": {
+			"title": "Collaborators",
+			"new": "Invite...",
+			"quit": "Quit collaboration",
+			"all": "All",
+			"online": "Online",
+			"invite": "Invite a collaborator",
+			"email": "Enter email address",
+			"invited": "Successfully invited user __name__",
+			"invitation_failed": "Failed to invite user __name__"
+
+		},
+		"upload": {
+			"copyright": "Copyright",
+			"description": "Description",
+			"title": "Upload",
+			"drop_here": "Drop files here to upload"
+		}
+	},
+
+	"widget_settings": "Widget settings",
+	"widget": {
+		"web_analytics_world": {
+			"title": "Web Analytics (world view)",
+			"visitors": "Visitors"
+		},
+		"web_analytics_overview": {
+			"title": "Web Analytics (overview)",
+			"top_pages": "Top pages",
+			"visits": "Visits"
+		}
+	}
+
+}

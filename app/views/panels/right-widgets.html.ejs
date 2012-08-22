@@ -1,0 +1,12 @@
+<div id="tb-right-panel">
+
+	<% for( var i in tastenbox.plugins ){ %>
+		<% plugin = tastenbox.plugins[i]; %>
+		<% if ( 'widget' in plugin ){ %>
+			<div class="tb-widget" id="widget_<%= plugin.name %>">
+				<%- partial(plugin.widget.contentFile) %>
+			</div>
+		<% } %>
+	<% } %>
+
+</div>

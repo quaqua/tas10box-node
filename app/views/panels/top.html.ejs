@@ -1,0 +1,14 @@
+<div id="tb-top-panel">
+	<div id="account-info" data-id="<%= currentUser._id %>">
+		<img class="user-<%= currentUser._id %>-pic32 userpic" src="/user/<%= currentUser._id %>/picture/32?current" />
+		<a href="/logout" original-title="<%= t('logout') %>" class="live-tipsy logout"><span class="ui-icon ui-icon-power"></span></a>
+		<a href="/user/<%= currentUser._id %>" data-remote="true" original-title="<%= t('user.show_my_profile') %>" class="live-tipsy username"><%= currentUser.getName() %></a>
+	</div>
+
+	<img src="/images/loading_24x24.gif" id="tb-loader" />
+	
+	<div class="tb-item-title"></div>
+	
+	<div id="tb-notifier"><span class="wrapper"><span class="content"></span><a href="#" onclick="$('#tb-notifier').hide();">x</a></span></div>
+
+</div>
