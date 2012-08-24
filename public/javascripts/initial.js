@@ -103,6 +103,4 @@ $( function(){
 	// if ($.browser.webkit) {
  	//   $('.login-container input').attr('autocomplete', 'off');
 
-}
-
 });

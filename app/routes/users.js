@@ -1,3 +1,27 @@
+
+var auth = require( __dirname + '/../actions/auth' )
+  , tas10core = require('tas10core')
+  , path = require('path')
+  , User = tas10core.getUser()
+  , dataStore = require( __dirname + '/../../lib/app' ).getDataStore();
+
+module.exports = function(app){
+
+	app.get('/user/:id/picture/:resolution', auth.checkAuthenticated, function( req, res ){
+		if( !req.params.resolution in ['32','50','100'])
+			req.params.resolution = '50';
+
+		var picName = '/users/'+req.params.id+'/'+req.params.resolution+'.jpg';
+
+		var pic = dataStore.get(picName);
+		if( pic )
+			res.sendfile(pic);
+		else
+			res.sendfile( path.normalize( __dirname + '/../../public/images/nopic_'+req.params.resolution+'x'+req.params.resolution+'.png' ) );
+	});
+        
+}
+
 /*
 var db = require('tas10core').db
   ,	auth = require(__dirname + '/../middleware/auth')
@@ -284,8 +308,6 @@ function _updateUserCollaborators( req, res, next ){
 }
 */
 
-module.exports = function(app){
-
 /*
 	app.get('/login', function(req, res){
 	  res.render(tbViewsPath + '/users/login.html.ejs', tbViewDefaults);
@@ -321,16 +343,6 @@ module.exports = function(app){
 
 	app.post('/user/:id/picture', streambuffer, checkAuthenticated, _getUser, _uploadPicture, function( req, res ){
 		res.send(JSON.stringify({success: true, user: req.user}));
-	});
-
-	app.get('/user/:id/picture/:resolution', checkAuthenticated, function( req, res ){
-		if( !req.params.resolution in ['32','50','100'])
-			req.params.resolution = '50';
-		var picName = global.appDir+'/data/users/'+req.params.id+'/'+req.params.resolution+'.jpg';
-		if( path.existsSync(picName) )
-			res.sendfile(picName);
-		else
-			res.sendfile( path.normalize( __dirname + '/../../public/images/logo_'+req.params.resolution+'x'+req.params.resolution+'.png' ) );
 	});
 
 	app.post('/users/invite', checkAuthenticated, _getUserByEmail, _inviteEmailAddr, _updateUserCollaborators, function( req, res ){
@@ -377,4 +389,3 @@ module.exports = function(app){
 
 	});
 */
-}

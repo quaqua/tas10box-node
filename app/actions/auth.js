@@ -15,7 +15,7 @@ module.exports.checkAuthenticated = function checkAuthenticated(req, res, next){
 					user.lastLogin.push({at: new Date(), ip: req.connection.remoteAddress});
 					user.save( function( err, user ){
 						if( user instanceof User ){
-							req.currentUser = user;
+							res.locals.currentUser = user;
 							req.authenticationPass = true;
 						}
 						next();
@@ -43,7 +43,7 @@ module.exports.isAuthenticated = function isAuthenticated( req, res, next ){
 					user.lastLogin.push({at: new Date(), ip: req.connection.remoteAddress});
 					user.save( function( err, user ){
 						if( user instanceof User ){
-							req.currentUser = user;
+							res.locals.currentUser = user;
 							req.authenticationPass = true;
 						}
 						next();

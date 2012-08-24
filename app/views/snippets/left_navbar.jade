@@ -1,0 +1,33 @@
+div#tas10-left-panel
+
+	div#tas10-navbar
+
+		span#active-tab-arrow
+
+		each plugin in tas10box.plugins
+
+			if plugin.type === 'NavWidget'
+
+				span.navbar-button.tas10-icon24.float-left(id='button_#{ plugin.name }', class='tas10-icon-#{plugin.name.toLowerCase()}', original-title=t( 'plugin.'+plugin.name.toLowerCase()+'.title'), data-dblclk-url=(plugin.doubleClickAction ? plugin.doubleClickAction : null) )
+
+		span.separator.navbar-button
+
+		each plugin in tas10box.plugins
+
+			if plugin.type === 'Application'
+
+				a.navbar-button.tas10-icon24.float-left(id='button_#{ plugin.name }', class='tas10-icon-#{plugin.name.toLowerCase()', original-title=t('plugin.'+plugin.name.toLowerCase()+'.title'), data-dblclk-url=(plugin.doubleClickAction ? plugin.doubleClickAction : null) )
+		
+		div.tas10-left-panel-button-content
+
+			div#tas10-button-tabs
+
+				each plugin in tas10box.plugins
+
+					if plugin.type && plugin.type.match(/NavWidget|Application/)
+
+						div.navtab(id='tab_#{ plugin.name }')
+							-var url = '/' + plugin.name.toLowerCase();
+
+							!=dynamicPartial( '/' + plugin.name.toLowerCase() + '/index.html.jade' );
+							//#{ plugin.loadNavJS ? "$.getScript('" + url + "');" : "" }

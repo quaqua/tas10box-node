@@ -17,7 +17,7 @@
     "commander": "1.x",
     "tas10core": "1.x"
   },
-  "license": "PROPRIETARY",
+  "license": "GPL3 / PROPRIETARY",
   "engine": {
     "node": ">=0.8"
   },

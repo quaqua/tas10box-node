@@ -1,11 +1,16 @@
+html
+	margin 0
+	height 100%
+
 body
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-  margin 0
-  padding 0
-  height 100%
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+	margin 0
+	padding 0
+	height 100%
+	background url('/images/main_bg.png')
 
 a
-  color: #00B7FF
+	color: #00B7FF
 
 input
 	padding: 3px 0
@@ -13,7 +18,7 @@ input
 	background: #fff
 
 	&:hover, &:focus
-  		outline: none
+		outline: none
 
 input[type=submit]
 	margin: 0
@@ -29,3 +34,72 @@ input[type=submit]
 
 .fill-width
 	width: 100%
+.float-right
+	float right
+.float-left
+	float left
+
+#tas10-top-panel 
+	margin: 10px
+	#account-info
+		float right
+		min-width: 300px
+		a 
+			color: #333 
+			font-size: 12px 
+			text-decoration: none 
+			opacity: 0.8
+			
+			&:hover	
+				opacity: 1
+
+
+		img.userpic 
+			width: 24px 
+			height: 24px 
+			float: right 
+			opacity: 0.8
+			border: 1px solid #ddd
+
+		.username 
+			float: right 
+			margin: 5px 0 0 
+			opacity: 0.7
+
+		.logout 
+			float: right 
+			opacity: 0.4 
+			padding: 6px 
+			margin: -1px 5px 0 0
+
+#tas10-logo
+	cursor pointer
+	background url('/images/logo_24x24.png')
+	width 24px
+	height 24px
+	cursor pointer
+	margin 10px
+	position absolute
+	top 0
+	left 0
+
+#tas10-loader
+	position: absolute
+	top: 10px
+	left: 10px
+	display: none
+	background: #88aa00
+	padding: 3px 4px 2px
+	width: 16px
+	height: 19px
+
+
+.tas10-overlay{ display:none; position: absolute; top: 0; left:0; right: 0; bottom:0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); z-index: 8888;}
+.tas10-dialog{ display:none; position: absolute; padding: 10px; background: #eee; color: #333; box-shadow: 3px 5px 10px rgba(010,100,100,0.3); z-index: 9999; border: 1px solid #aaa; }
+.tas10-dialog .border-top{ background: url('/images/tas10-container-tabs-sprites.png'); background-position: -10px -4px; width: 100%; height: 15px; position: absolute; top: -14px; left: 0; }
+.tas10-dialog .ui-icon-closethick{ float: right; cursor: pointer; border: 1px solid #000; opacity: 0.2; }
+.tas10-dialog .ui-icon-closethick:hover{ opacity: 1; border-color: #333; }
+.tas10-dialog label{ color: #777; text-transform: uppercase; }
+.tas10-dialog .title{ font-size: 14px; font-weight: 900; }
+.tas10-dialog .info-container{ min-width: 400px; }
+.tas10-dialog h3{ font-size: 12px; font-weight: 500; color: #aaa; text-transform: uppercase; }

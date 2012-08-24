@@ -1,0 +1,18 @@
+div#tas10-top-panel
+
+	div#account-info(data-id=currentUser._id)
+		img.userpic( class='user_#{currentUser._id}_pic32.userpic', src='/user/#{ currentUser._id }/picture/24?current' )
+		a.live-tipsy.logout( href='/logout', original-title=t( 'logout' ) )
+			span.ui-icon.ui-icon-power.float-right
+		a.live-tipsy.username( href='/user/'+currentUser._id, data-remote=true,
+			original-title=t( 'user.click_to_edit_profile' ) ) #{currentUser.getName()}
+
+	div#tas10-loader
+		img( src='/images/loading_16x16.gif' )
+
+	div.tas10-item-title
+
+	div#tas10-notifier
+		span.wrapper
+			span.content
+			a( onclick="$('#tb-notifier').hide();" ) x

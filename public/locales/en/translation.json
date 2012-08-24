@@ -42,6 +42,7 @@
 		"setup_desc": "Welcome! Please set up a password and you are ready to start"
 	},
 	"user": {
+		"click_to_edit_profile": "Click to edit your profile",
 		"name": "Name",
 		"email": "Email",
 		"fullname": "Full name",
@@ -297,6 +298,7 @@
 			"edit": "Edit workshop"
 		},
 		"dashboard": {
+			"goto": "Go to dashboard",
 			"title": "Dashboard",
 			"homedir": "__username__'s home",
 			"new": "New ...",

@@ -7,6 +7,28 @@ var program = require('commander')
 program
 	.version('0.99.1')
 
+var eol = 'win32' == os.platform() ? '\r\n' : '\n'
+
+var app_js = ['/**',
+' * tas10box application startup file',
+' */',
+'',
+'var tas10box = require(\'tas10box\');',
+'tas10box.start();',
+''
+].join(eol);
+
+var settings_json = JSON.stringify({
+	"site": {
+		"title": "My tas10box app",
+		"domain": "localhost"
+	},
+	"port": 8080,
+	"db": "mongodb://localhost:27017/my_tas10box_app?auto_reconnect",
+  	"mailerSettings": {	"host": "localhost", "port": 25, "domain": "localhost",	"authentication": false	},
+	"plugins": {}
+});
+
 program
 	.command('new <name>')
 	.description('create a new crevis scaffold')
@@ -21,13 +43,26 @@ program
 		mkdir( name + '/public/stylesheets');
 		mkdir( name + '/public/javascripts');
 		mkdir( name + '/public/images');
+		write( name + '/app.js', app_js );
+		write( name + '/config/tas10_settings.json', settings_json );
 		console.log();
 		console.log('   \x1b[32msuccess\x1b[0m');
 		console.log();
 	});
 
-program.parse(process.argv);
+program
+	.command('setup [configfile]')
+	.description('setup a managaer user and if specified in the configuration website and -pages. If config/tas10_settings.json is not present, it should be passed as argument')
+	.action( function setupScaffold( configfile ){
+		console.log();
+		configfile || (configfile = './config/tas10_settings.json' )
+		if( !fs.existsSync( './' + configfile ) )
+			return console.log('   \033[31merror\033[0m : ', configfile, ' was not found (if not config/tas10_settings.json, please pass it as argment)');
+		openConnection( configfile );
+		console.log();
+	})
 
+program.parse(process.argv);
 
 /**
  * echo str > path.
@@ -55,4 +90,35 @@ function mkdir(path) {
 	} catch( e ){
 		console.log('   \033[31mskipped\033[0m : ' + path + ' exists');
 	}
+}
+
+function openConnection( configfile ){
+
+	var settings = JSON.parse( fs.readFileSync( configfile ) );
+	var tas10core = require('tas10core');
+	if( !settings.db )
+		return exitError( configfile + ' does not provide db information. Please check')
+	tas10core.connect( settings.db );
+
+	var User = tas10core.getUser();
+	User.query().where('name', 'manager').first( function( err, user ){
+		if( user )
+			console.log('   \033[31mskipped\033[0m : user manager alreadye exists');
+		else
+			User.create({name: 'manager', password: 'manager'}, function( err, user ){
+				if( err )
+					exitError( err.message );
+				else
+					console.log('   \033[36mcreate\033[0m : user ', user.name, ' with password manager.' );
+			});
+
+		console.log();
+		
+		process.exit(0);
+	});
+
+}
+
+function exitError( msg ){
+	console.log('   \033[31merror\033[0m : ' + msg );
 }

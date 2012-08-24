@@ -16,12 +16,29 @@ module.exports = function( app ){
 	app.get('/login', tas10router.render);
 
 	app.post('/login', userActions.loginUser, function(req, res){
-		if( req.loginSuccess )
-			res.redirect('/');
-		else{
-			tas10router.render( req, res );
-		}
+            if( req.loginSuccess )
+                    res.redirect('/');
+            else{
+                    tas10router.render( req, res );
+            }
 	});
+    
+	app.get( '/logout', function( req, res ){
+            req.session.user_id = null;
+            res.redirect('/login');
+	});
+        
+        app.get('/debug/jade', function( req, res ){
+            var jade = require('jade')
+              , fs = require('fs')
+              , j;
+            
+            options = req.query;
+            filename = options['filename'];
+            delete options['filename'];
+            res.render( filename );
+            
+        })
 
 	app.get('/sys/status/locale', function(req, res) {
 	    res.send('locale: ' + req.locale + ' (' + req.session.user_id + ') <br /> key welcome -> ' + req.i18n.t('welcome'));
