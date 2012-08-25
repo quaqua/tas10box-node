@@ -1,7 +1,7 @@
 var tas10core = require( 'tas10core' )
   , User = tas10core.getUser();
 
-module.exports.checkAuthenticated = function checkAuthenticated(req, res, next){
+module.exports.check = function checkAuthenticated(req, res, next){
 
 	if( 'authenticationPass' in req )
 		next();
@@ -29,7 +29,7 @@ module.exports.checkAuthenticated = function checkAuthenticated(req, res, next){
 
 };
 
-module.exports.isAuthenticated = function isAuthenticated( req, res, next ){
+module.exports.is = function isAuthenticated( req, res, next ){
 
 	if( 'authenticationPass' in req )
 		next();

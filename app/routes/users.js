@@ -7,7 +7,7 @@ var auth = require( __dirname + '/../actions/auth' )
 
 module.exports = function(app){
 
-	app.get('/user/:id/picture/:resolution', auth.checkAuthenticated, function( req, res ){
+	app.get('/user/:id/picture/:resolution', auth.check, function( req, res ){
 		if( !req.params.resolution in ['32','50','100'])
 			req.params.resolution = '50';
 

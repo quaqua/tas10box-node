@@ -11,7 +11,7 @@ var auth = require( __dirname + '/../actions/auth' )
 module.exports = function( app ){
 
 
-	app.get('/', auth.checkAuthenticated, tas10router.render);
+	app.get('/', auth.check, tas10router.render);
 
 	app.get('/login', tas10router.render);
 
@@ -27,18 +27,6 @@ module.exports = function( app ){
             req.session.user_id = null;
             res.redirect('/login');
 	});
-        
-        app.get('/debug/jade', function( req, res ){
-            var jade = require('jade')
-              , fs = require('fs')
-              , j;
-            
-            options = req.query;
-            filename = options['filename'];
-            delete options['filename'];
-            res.render( filename );
-            
-        })
 
 	app.get('/sys/status/locale', function(req, res) {
 	    res.send('locale: ' + req.locale + ' (' + req.session.user_id + ') <br /> key welcome -> ' + req.i18n.t('welcome'));

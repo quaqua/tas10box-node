@@ -1,11 +1,15 @@
 head
 
+	title
+		=siteTitle+'\'s tas10box'
+
 	-// jquery and ui
 	script(src='/javascripts/3rdparty/jquery.min.js')
 	script(src='/javascripts/3rdparty/jquery-ui.min.js')
 
 	-// 3rdparty software
 	script(src='/javascripts/3rdparty/jquery.tipsy.js')
+	script(src='/javascripts/3rdparty/jsrender.js')
 	script(src='/javascripts/3rdparty/moment.min.js')
 	script(src='/javascripts/3rdparty/i18next.min.js')
 
@@ -17,6 +21,9 @@ head
 
 	-// tas10 Widgets
 	script(src='/javascripts/widgets/tas10_container.js')
+	script(src='/javascripts/widgets/tas10_new.js')
+	script(src='/javascripts/widgets/tas10_tree.js')
+	script(src='/javascripts/widgets/tas10_find.js')
 
 	-// Initial and main functions
 	script(src='/javascripts/initial.js')
@@ -27,4 +34,5 @@ head
 
 	link(rel='stylesheet', href='/stylesheets/navbar.css')
 	link(rel='stylesheet', href='/stylesheets/icons.css')
+	link(rel='stylesheet', href='/stylesheets/container.css')
 	link(rel='stylesheet', href='/stylesheets/style.css')

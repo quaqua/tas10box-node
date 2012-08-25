@@ -105,16 +105,16 @@
 	"modified_at": "Modified at",
 	"what_desc": "What would you like to create?",
 	"created": "__name__ has been created successfully!",
-	"creation_failed": "Failed to create __name__",
+	"creation_failed": "Failed to create __name__ (reason: __reason__)",
 	"starred": "Document __name__ has been starred",
 	"unstarred": "Star removed from document __name__",
 	"move_to": "Move to",
 	"copy_to": "Copy to",
-	"tag_with": "Label with",
+	"label_with": "Label with",
 	"labeled_with": "Labeled with",
 	"moved": "__name__ has been moved to __to__",
 	"moving_failed": "__name__ could not be moved to __to__",
-	"tagged": "__name__ has been tagged with __to__",
+	"labeled": "__name__ has been labeled with __to__",
 	"view_type": "View",
 	"tree": "Tree",
 	"list": "List",
@@ -131,17 +131,6 @@
 	},
 	"page": "Page",
 	"items_per_page": "Items per page",
-	"tags": {
-		"title": "Labels",
-		"desc": "A label is used to categorize and organize any items (including tags themself)",
-		"add": "Add label...",
-		"remove": "Remove this label",
-		"already_tagged": "__name__ is already labeled with this tag",
-		"tagged_with": "__name__ has been labeled with __tag__",
-		"removed_tag": "Label __tag__ has been removed from __name__",
-		"cannot_tag_with_itself": "Document __name__ cannot be labeled with itself"
-	},
-
 	"acl": {
 		"title": "Access Control",
 		"desc": "Users and groups with access on this document",
@@ -178,14 +167,22 @@
 		"favourits": {
 			"title": "Favourits"
 		},
-		"label": {
+		"labels": {
 			"title": "Labels",
 			"new": "New label",
 			"query": "Query",
 			"template": "Template",
 			"template_desc": "A template is a specialized view to list this label's contents in a predefined manner.",
-			"no_template": "No template"
+			"no_template": "No template",
+			"desc": "A label is used to categorize and organize any items (including labels themself)",
+			"add": "Add label...",
+			"remove": "Remove this label",
+			"already_labeled": "__name__ is already labeled with this label",
+			"labeled_with": "__name__ has been labeled with __label__",
+			"removed_label": "Label __label__ has been removed from __name__",
+			"cannot_label_with_itself": "Document __name__ cannot be labeled with itself"
 		},
+
 		"file": {
 			"title": "Upload file(s)",
 			"new": "Upload file(s)"

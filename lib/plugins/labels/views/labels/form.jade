@@ -1,0 +1,33 @@
+form.tas10-form( method='post', action='/labels', data-remote='true' )
+	input(type='hidden', name='_csrf', value=_csrf)
+	input.tas10-current-tag(type='hidden', name='label[labels]')
+
+	p.desc
+		=t( 'plugin.labels.desc' )
+
+	p
+		label
+			=t( 'name' )
+		br
+		input.fill-width.js-get-focus.name( type='text', name='label[name]', required=true)
+
+	p
+		label
+			=t( 'plugin.labels.template' )
+		br
+		span.desc
+			=t( 'plugin.labels.template_desc' )
+		br
+		select( name='label[template]' )
+			option( value='none' )
+				=t( 'plugin.labels.no_template' )
+			each plugin in tas10box.plugins
+				if plugin.labelTemplates
+					each template in plugin.labelTemplates
+						option( data-v=basename( template, 'skipExtension' ), value=template )
+							=t( 'plugin.' + plugin.name + '.label_templates.' + basename( template, 'skipExtension' ) )
+
+	p
+		input.tas10-button.float-right(type='submit', value=t( 'create' ))
+		input.continue-editing.tas10-checkbox(type='checkbox', name='keep_open')
+		=t( 'continue_editing' )

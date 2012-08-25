@@ -4,7 +4,7 @@
 
 (function( jQuery ){
 
-	var setupTbContainerEvents = function(containerItem, options){
+	var setupTas10ContainerEvents = function(containerItem, options){
 
 		$(containerItem).find('.tab').live('click', function(e){
 			var options = $(this).data('options');
@@ -32,7 +32,7 @@
 
 	};
 
-	var tbContainerMethods = {
+	var tas10ContainerMethods = {
 	    init : function( options ) {
 
 	      if( $(this).hasClass('tas10-container-obj') )
@@ -54,7 +54,7 @@
 	      			$(ui.item).closest('.tas10-container-obj').tas10Container( 'remove', $(ui.item).attr('id').replace('tab_','') );
 	      	} 
 	      });
-	      setupTbContainerEvents(this, options);
+	      setupTas10ContainerEvents(this, options);
 
 	    },
 	    append : function( options, callback ) {
@@ -150,10 +150,10 @@
 
 	  jQuery.fn.tas10Container = function( method ) {
 
-	    if ( tbContainerMethods[method] ) {
-	      return tbContainerMethods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+	    if ( tas10ContainerMethods[method] ) {
+	      return tas10ContainerMethods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
 	    } else if ( typeof method === 'object' || ! method ) {
-	      return tbContainerMethods.init.apply( this, arguments );
+	      return tas10ContainerMethods.init.apply( this, arguments );
 	    } else {
 	      $.error( 'Method ' +  method + ' does not exist on jQuery.tas10Container' );
 	    }

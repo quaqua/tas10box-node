@@ -1,11 +1,7 @@
 .action-container
 
-    .tab-header
-
-        span.new-item.tas10-icon24.tas10-icon-new.float-right.live-tipsy(
-            original-title=t('plugin.label.new'), 
-            data-type='label' )
-
-    !=dynamicPartial( 'snippets/browser_actions.jade' )
-
-    ul#tas10-browser-tree.tas10-tree
+	div.tab-header
+	!=dynamicPartial( 'snippets/browser_actions.jade' )
+	ul#tas10-browser-tree.tas10-tree.tas10-labels-tree( style="margin: 10px;" )
+	script
+		$('#tas10-browser-tree').tas10Tree({ url: '/labels?roots=true' });

@@ -12,7 +12,7 @@ var tas10 = {
 
 	'dashboard': function( action ){
 		if( action === 'reload' ){
-			$('#tas10-dashboard').load('/dashboard/reload', function(){
+			$('#tas10-dashboard').load('/dashboard/reload', function reloadDashboard(){
 				tas10.dashboard('show');
 			});
 		} else if ( action === 'hide' ){
@@ -39,7 +39,7 @@ var tas10 = {
 
 };
 
-tas10['notify'] = function( msg, error ){
+tas10['notify'] = function tas10Notify( msg, error ){
 	if( error )
 		$('#tas10-notifier').addClass('error');
 	else
@@ -48,14 +48,14 @@ tas10['notify'] = function( msg, error ){
 	$('#tas10-notifier').show().find('.wrapper').switchClass('low','high', 0).delay(2000).switchClass('high','low', 600, 'easeOutBack');
 }
 
-tas10['flash'] = function( flash ){
+tas10['flash'] = function tas10Flash( flash ){
 	if( flash.info.length > 0 )
 		tas10.notify(flash.info[flash.info.length-1]);
 	if( flash.error.length > 0 )
 		tas10.notify(flash.error[flash.error.length-1],true);
 }
 
-tas10['loader'] = function( show ){
+tas10['loader'] = function tas10Loader( show ){
 	if( show ){
 		$('#tas10-logo').addClass('loading');
 		$('#tas10-loader').show();
@@ -65,13 +65,13 @@ tas10['loader'] = function( show ){
 	}
 }
 
-tas10['confirm'] = function( msg, callback ){
+tas10['confirm'] = function tas10Confirm( msg, callback ){
 	var really = confirm(msg);
 	if( really )
 		callback();
 }
 
-tas10['prompt'] = function( msg, text, callback ){
+tas10['prompt'] = function tas10Prompt( msg, text, callback ){
 	var inputText = prompt(msg, text);
 	if( inputText && inputText.length > 0 )
 		callback( inputText );
@@ -79,7 +79,7 @@ tas10['prompt'] = function( msg, text, callback ){
 		tas10.notify( 'aborted' );
 }
 
-tas10['infoDialog'] = function(id){
+tas10['infoDialog'] = function tas10InfoDialog(id){
 
 	$.ajax({ url: '/document/'+id, dataType: 'json',
 			 success: function( data ){
@@ -126,7 +126,7 @@ tas10['infoDialog'] = function(id){
 
 }
 
-tas10['shareDialog'] = function(id){
+tas10['shareDialog'] = function tas10ShareDialog(id){
 
 	$.ajax({ url: '/document/'+id, dataType: 'json',
 			 success: function( data ){
@@ -142,7 +142,7 @@ tas10['shareDialog'] = function(id){
 
 }
 
-tas10['dialog'] = function( action, text, callback ){
+tas10['dialog'] = function tas10Dialog( action, text, callback ){
 
 	if( action === 'close' ){
 		$('#tas10-overlay').hide();
@@ -177,7 +177,7 @@ tas10['dialog'] = function( action, text, callback ){
 
 }
 
-tas10['getPath'] = function( elem ){
+tas10['getPath'] = function tas10GetPath( elem ){
 	var path = [{id: $(elem).data('id'), className: $(elem).attr('data-className'), name: $(elem).find('div.item-container:first .title').text()}];
 	$(elem).parents('li.item').each( function( ){
 		path.push({id: $(this).attr('data-id'), className: $(this).attr('data-className'), name: $(this).find('div.item-container:first .title').text()});
@@ -185,7 +185,7 @@ tas10['getPath'] = function( elem ){
 	return path.reverse();
 }
 
-tas10['setPath'] = function( path, append ){
+tas10['setPath'] = function tas10SetPath( path, append ){
 
 	var tbPathMarkup = "&nbsp;/&nbsp;<a href=\"/${className ? className.toLowerCase()+'s' : ''}/${id}\" data-remote=\"true\" class=\"item_${id}_title\">${name}</a>";
 	var tbFindMarkup = "<span class=\"path-item item_${id}_title\" data-id=\"${id}\">${name}</span>";

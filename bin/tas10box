@@ -102,19 +102,23 @@ function openConnection( configfile ){
 
 	var User = tas10core.getUser();
 	User.query().where('name', 'manager').first( function( err, user ){
-		if( user )
+		if( user ){
 			console.log('   \033[31mskipped\033[0m : user manager alreadye exists');
-		else
+			console.log();
+			process.exit(0);
+		} else
 			User.create({name: 'manager', password: 'manager'}, function( err, user ){
 				if( err )
 					exitError( err.message );
 				else
 					console.log('   \033[36mcreate\033[0m : user ', user.name, ' with password manager.' );
+
+				console.log();
+				
+				process.exit(0);
+
 			});
 
-		console.log();
-		
-		process.exit(0);
 	});
 
 }

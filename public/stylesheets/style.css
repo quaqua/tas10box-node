@@ -1,12 +1,11 @@
 html {
   margin: 0;
-  height: 100%;
+  padding: 0;
 }
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 13px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%;
   background: url("/images/main_bg.png");
 }
 a {
@@ -26,13 +25,13 @@ input[type=submit] {
   padding: 6px 10px;
   font-size: 14px;
   cursor: pointer;
-  background: #e0e0e0;
+  background: #8a0;
   border: none;
+  color: #fff;
 }
 input[type=submit]:hover,
 input[type=submit]:focus {
-  background: #8a0;
-  color: #fff;
+  background: #444;
 }
 .fill-width {
   width: 100%;
@@ -42,6 +41,86 @@ input[type=submit]:focus {
 }
 .float-left {
   float: left;
+}
+.desc {
+  color: #999;
+  font-size: 10px;
+}
+label.desc {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.tas10-shadow {
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+h1.p,
+p.p {
+  margin-bottom: 0;
+}
+p.h1 {
+  margin-top: 0;
+}
+.tas10-button {
+  color: #fff;
+  background: #8a0;
+  border: 1px solid #999;
+  padding: 7px 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.tas10-button:hover,
+.tas10-button:focus {
+  background: #444;
+}
+.tas10-button:hover .ui-icon,
+.tas10-button:focus .ui-icon {
+  background-image: url("/stylesheets/thirdparty/ui-lightness/images/ui-icons_ffffff_256x240.png");
+}
+.tas10-button .disabled {
+  opacity: 0.1;
+}
+.tas10-button .disabled:hover,
+.tas10-button .disabled:focus {
+  opacity: 0.1;
+  box-shadow: none;
+}
+.tas10-button .small {
+  padding: 2px 5px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.tas10-button .delete {
+  background: #d44;
+  border: 1px solid #a44;
+}
+fieldset.tas10-steps {
+  border: none;
+  border-top: 1px solid #aaa;
+}
+fieldset.tas10-steps legend {
+  font-size: 14px;
+  color: #666;
+  text-align: right;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+fieldset.tas10-steps p.desc {
+  margin: 0;
+  color: #888;
+}
+fieldset.title {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+fieldset.title legend {
+  font-size: 14px;
+  color: #444;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0;
 }
 #tas10-top-panel {
   margin: 10px;
@@ -60,33 +139,33 @@ input[type=submit]:focus {
   opacity: 1;
 }
 #tas10-top-panel #account-info img.userpic {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   float: right;
   opacity: 0.8;
   border: 1px solid #ddd;
 }
 #tas10-top-panel #account-info .username {
   float: right;
-  margin: 5px 0 0;
+  margin: 7px 0 0;
   opacity: 0.7;
 }
 #tas10-top-panel #account-info .logout {
   float: right;
   opacity: 0.4;
   padding: 6px;
-  margin: -1px 5px 0 0;
+  margin: 1px 5px 0 0;
 }
 #tas10-logo {
   cursor: pointer;
-  background: url("/images/logo_24x24.png");
-  width: 24px;
-  height: 24px;
+  background: url("/images/logo_30x30.png");
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   margin: 10px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 5px;
 }
 #tas10-loader {
   position: absolute;
@@ -98,6 +177,83 @@ input[type=submit]:focus {
   width: 16px;
   height: 19px;
 }
+.browser-actions-bg,
+background: none,
+padding: 5px,
+margin: 5px0,
+.tas10-icon24 {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.browser-actions-bg:hover,
+background: none:hover,
+padding: 5px:hover,
+margin: 5px0:hover,
+.tas10-icon24:hover {
+  opacity: 0.8;
+}
+.browser-actions-bg:hover b-list li.selected,
+background: none:hover b-list li.selected,
+padding: 5px:hover b-list li.selected,
+margin: 5px0:hover b-list li.selected,
+.tas10-icon24:hover b-list li.selected {
+  background: #ffc;
+}
+.browser-actions {
+  margin: 4px;
+  border: 1px solid #ddd;
+}
+.browser-actions span.spacer {
+  float: left;
+  height: 16px;
+  padding: 3px 5px 3px 4px;
+}
+.browser-actions a {
+  float: left;
+  background: none;
+  padding: 3px 5px 3px 4px;
+  cursor: pointer;
+}
+.browser-actions a:hover .ui-icon {
+  opacity: 1;
+}
+.browser-actions a .ui-icon {
+  opacity: 0.5;
+}
+.browser-actions a .disabled {
+  cursor: default;
+  background: none;
+}
+.browser-actions a .disabled .ui-icon {
+  opacity: 0.2;
+}
+.browser-actions a .disabled:hover {
+  box-shadow: none;
+  margin-right: 0;
+  padding-right: 4px;
+}
+.browser-actions a .paste {
+  background: #ffc;
+}
+.browser-actions a .paste .disabled {
+  background: none;
+}
+.context-trigger:hover .context-content {
+  display: block;
+}
+.context-content {
+  display: none;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  z-index: 10;
+  position: absolute;
+  top: 15px;
+  right: -1px;
+  width: 200px;
+  max-height: 500px;
+  overflow: auto;
+}
 .tas10-overlay {
   display: none;
   position: absolute;
@@ -108,17 +264,25 @@ input[type=submit]:focus {
   width: 100%;
   height: 100%;
   background: rgba(255,255,255,0.8);
-  z-index: 8888;
+  z-index: 9998;
+}
+#tas10-notifier {
+  display: none;
 }
 .tas10-dialog {
   display: none;
   position: absolute;
   padding: 10px;
-  background: #eee;
+  background: #fff;
   color: #333;
-  box-shadow: 3px 5px 10px rgba(10,100,100,0.3);
+  box-shadow: 3px 5px 10px #ddd;
   z-index: 9999;
-  border: 1px solid #aaa;
+  border: 1px solid #ddd;
+}
+.tas10-dialog .tas10-dialog-header {
+  color: #999;
+  font-weight: 900;
+  margin: 3px 5px;
 }
 .tas10-dialog .border-top {
   background: url("/images/tas10-container-tabs-sprites.png");
@@ -140,7 +304,6 @@ input[type=submit]:focus {
   border-color: #333;
 }
 .tas10-dialog label {
-  color: #777;
   text-transform: uppercase;
 }
 .tas10-dialog .title {
@@ -155,4 +318,163 @@ input[type=submit]:focus {
   font-weight: 500;
   color: #aaa;
   text-transform: uppercase;
+}
+.tas10-form label {
+  text-transform: uppercase;
+  color: #999;
+}
+.tas10-form input[type='text'] {
+  padding: 5px 0;
+  font-size: 14px;
+}
+.tas10-form input[type='text']:focus {
+  border-color: #999;
+}
+.tas10-form input[type='text'].name {
+  font-weight: 900;
+}
+ul.tas10-tree,
+ul.tas10-tree ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+ul.tas10-tree {
+  height: 100%;
+  overflow: auto;
+}
+ul.tas10-tree li {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  cursor: pointer;
+  background: inherit;
+}
+ul.tas10-tree li .drop-hover {
+  background: #fc6 !important;
+}
+ul.tas10-tree li .item-container {
+  padding: 4px 0;
+}
+ul.tas10-tree li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #555;
+}
+ul.tas10-tree li .title.item-color {
+  border-radius: 3px;
+  padding: 0 5px;
+  color: #fff;
+}
+ul.tas10-tree li .tb-icon16 {
+  margin: -1px 3px 0 0;
+}
+ul.tas10-tree li .spacer {
+  width: 16px;
+  height: 16px;
+  float: left;
+}
+ul.tas10-tree li .opener {
+  margin: -2px 0 0;
+  opacity: 0.5;
+  cursor: default;
+}
+ul.tas10-tree li .opener:hover {
+  opacity: 1;
+}
+ul.tas10-tree li .opener.loading {
+  background-image: url("/images/loading_16x16.gif") !important;
+  background-position: 0 0 !important;
+}
+#tas10-find {
+  position: absolute;
+  left: 320px;
+  right: 10px;
+  top: 53px;
+  height: 32px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+#tas10-find .submit {
+  position: absolute;
+  top: 4px;
+  right: 30px;
+  opacity: 0.5;
+}
+#tas10-find .submit:hover {
+  opacity: 1;
+}
+#tas10-find .settings {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  opacity: 0.5;
+}
+#tas10-find .settings:hover {
+  opacity: 1;
+}
+#tas10-find .available-scripts {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#tas10-find .available-scripts li {
+  padding: 3px;
+  cursor: pointer;
+}
+#tas10-find .available-scripts li:hover {
+  background: #6db4ff;
+}
+#tas10-find input[type=text] {
+  border: none;
+  background: none;
+  font-size: 16px;
+  position: absolute;
+  width: 300px;
+  margin: 3px 60px 0 0;
+}
+#tas10-find input[type=text]:focus {
+  outline: none;
+}
+#tas10-find .path {
+  margin: 5px 8px;
+  float: left;
+}
+#tas10-find .path-item {
+  float: left;
+  margin: 0 5px;
+  padding: 3px 5px;
+  background: #d64;
+  color: #fff;
+}
+#tas10-find .conditions {
+  margin: 5px 8px;
+  float: left;
+}
+#tas10-find .field-condition {
+  float: left;
+  margin: 0 5px;
+  padding: 3px 5px;
+  background: #ddd;
+  color: #000;
+}
+#tas10-find .label-res {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  width: 200px;
+  background: #fff;
+  z-index: 10;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 3px #555;
+}
+#tas10-find .label-res li {
+  padding: 5px;
+}
+#tas10-find .label-res li .selected-res {
+  background-color: #6db4ff;
+  color: #fff;
+  cursor: pointer;
 }
